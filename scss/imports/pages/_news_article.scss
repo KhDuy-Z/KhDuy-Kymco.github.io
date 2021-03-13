@@ -1,0 +1,51 @@
+.article{
+    margin-top: 120px;
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        h2{
+            @include text(20px, sfe, normal, $primary-cl, uppercase);
+            font-weight: bold;
+        }
+        span{
+            @include text(20px, sfe, normal, black, uppercase);
+            font-weight: bold;
+        }
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+        h3{
+            @include text(26px, sfe, normal, black, uppercase);
+            font-weight: bold;
+            border-top: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            padding: 20px 0;
+        }
+    }
+    &__content{
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        img{
+            margin-bottom: 40px;
+        }
+        p{
+            @include text(18px, avo, normal, black, inherit);
+            max-width: 880px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+    }
+}
+@include tablet{
+    .article{
+        .container{
+            .article__content{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

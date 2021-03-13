@@ -1,0 +1,86 @@
+.knetwork{
+    position: relative;
+    height: 120vh;
+    margin-top: 120px;
+    padding-bottom: 120px;
+    .network1{
+        position: absolute;
+        height: 600px;
+        top: 10%;
+    }
+    .network2{
+        position: absolute;
+        left: 25%;
+        top: 25%;
+        height: 450px;
+    }
+    &__title{
+        position: absolute;
+        z-index: 100;
+        left: 25%;
+        top: 5%;
+        h2{
+            @include text(30px, sfe, normal, black, uppercase);
+            font-weight: bold;
+        }
+        p{
+            @include text(20px, sfe, normal, black, inherit);
+            font-weight: bold;
+            max-width: 580px;
+        }
+    }
+    &__bottom{
+        position: absolute;
+        left: 25%;
+        bottom: 10%;
+        display: flex;
+        &-img{
+            display: flex;
+            align-items: center;
+            margin-right: 25px;
+            span{
+                @include text(20px, sfe, normal, black, uppercase);
+                font-weight: bold;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .knetwork{
+        height: 80vh;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        &__title{
+            left: 15%;
+            top: 15%;
+        }
+        .network1{
+            width: 100%;
+        }
+        .network2{
+            display: none;
+        }
+        &__bottom{
+            left: 10%;
+        }
+    }
+}
+
+@include mobile{
+    .knetwork{
+        &__title{
+            left: 5%;
+        }
+        &__bottom{
+            flex-direction: column;
+            &-img{
+                margin-bottom: 30px;
+                span{
+                    color: $white-cl;
+                }
+            }
+        }
+    }
+}

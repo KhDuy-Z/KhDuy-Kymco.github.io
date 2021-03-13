@@ -1,0 +1,40 @@
+.slider__item-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    h2{
+        @include text(40px, sfe, normal, white, uppercase);
+        font-weight: bold;
+    }
+    span{
+        @include text(22px, avb, normal, white, inherit);
+    }
+}
+.pagination{
+    text-align: center;
+    margin: 80px 0 120px;
+    a{  
+        text-decoration: none;
+        @include text(20px, avb, normal, black, inherit);
+        font-weight: bold;
+        padding: 10px 15px;
+        border: 1px solid #cccccc;
+        margin: 0 10px;
+        &:hover{
+            transition: 0.5s;
+            background-color: $primary-cl;
+            color: white;
+        }
+    }
+}
+
+@include mobile{
+    .pagination{
+        a{
+            font-size: 14px;
+            padding: 10px 12px;
+        }
+    }
+}

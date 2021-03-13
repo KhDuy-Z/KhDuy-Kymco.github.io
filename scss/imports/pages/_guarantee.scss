@@ -1,0 +1,29 @@
+.article{
+    &__content{
+        h3{
+            @include text(30px, sfe, normal, black, uppercase);
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        p{
+            @include text(18px, sfe, normal, black, inherit);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        h4{
+            @include text(24px, sfe, normal, black, uppercase);
+            font-weight: bold;
+            text-align: left;
+        }
+        span{
+            text-align: left;
+        }
+        h5{
+            text-align: left;
+            @include text(20px, sfe, normal, black, inherit);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+}

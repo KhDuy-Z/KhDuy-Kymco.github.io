@@ -1,0 +1,246 @@
+.job{
+    margin-top: 60px;
+    padding-bottom: 120px;
+    .job1{
+        @include midflex();
+        img{
+            height: 550px;
+            margin-right: auto;
+        }
+        &__info{
+            width: 50%;
+            h2{
+                @include text(25px, sfe, normal, $black-cl, uppercase);
+                font-weight: bold;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    background: black;
+                    height: 5px;
+                    width: 80px;
+                    top: -40%;
+                    left: -10%;
+                }
+            }
+            p{
+                @include text(18px, avo, normal, $black-cl, inherit);
+                max-width: 350px;
+            }
+        }
+    }
+    .job2{
+        display: flex;
+        margin-top: 80px;
+        img{
+            width: 50%;
+            margin-left: auto;
+            margin-top: 100px;
+        }
+        &__info{
+            // max-width: 400px;
+            padding-left: 300px;
+            h2{
+                @include text(25px, sfe, normal, $black-cl, uppercase);
+                font-weight: bold;
+                margin-bottom: 40px;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: " ";
+                    background: black;
+                    width: 50px;
+                    height: 5px;
+                    top: -20%;
+                }
+            }
+            h3{
+                @include text(18px, sfe, normal, $black-cl, uppercase);
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
+            p{
+                @include text(16px, avo, normal, $black-cl, inherit);
+                max-width: 270px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+.jobtype{
+    position: relative;
+    h3{
+        text-align: center;
+        @include text(25px, sfe, normal, $black-cl, uppercase);
+        font-weight: bold;
+        margin-bottom: 200px;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 5px;
+            background: black;
+            left: 50%;
+            transform: translate(-50%);
+            top: -50%;
+        }
+    }
+    img{
+        height: 500px;
+        width: 100%;
+    }
+    &__item-wrap{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    &__item{
+        text-align: center;
+        border: 1px solid #cccccc;
+        width: 300px;
+        background: white;
+        h4{
+            @include text(25px, sfe, normal,$primary-cl, uppercase);
+            font-weight: bold;
+            padding-top: 60px;
+        }
+        span{
+            @include text(20px, sfe, normal, $black-cl, inherit);
+            font-weight: bold;
+            padding-bottom: 60px;
+            display: block;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 5px;
+                background: black;
+                left: 50%;
+                transform: translate(-50%);
+                bottom: 50%;
+            }
+        }
+        p{
+            @include text(18px, avo, normal, $black-cl, inherit);
+            max-width: 200px;
+            margin: auto;
+            padding-bottom: 80px;
+        }
+        a{
+            @include text(18px, sfe, normal, $primary-cl, inherit);
+            font-weight: bold;
+            display: block;
+            padding-bottom: 40px;
+        }
+    }
+    .pagination{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        a{
+            background-color: white;
+            color: black;
+            &:hover{
+                background-color: $primary-cl;
+                color: white;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .job{
+        .job1{
+            img{
+                height: 300px;
+            }
+            &__info{
+                margin-left: 30px;
+            }
+        }
+        .job2{
+            &__info{
+                padding-left: 35px;
+            }
+        }
+    }
+    .jobtype{
+        .container{
+            .jobtype__item{
+                width: 215px;
+                h4{
+                    font-size: 22px;
+                }
+            }
+        }
+        .pagination{
+            width: 100%;
+        }
+    }
+}
+
+@include mobile{
+    .job{
+        .job1{
+            flex-direction: column-reverse;
+            img{
+                margin-right: 0;
+            }
+            &__info{
+                width: 100%;
+                margin-left: 0;
+                p{
+                    padding: 15px 0;
+                }
+            }
+        }
+        .job2{
+            flex-direction: column;
+            &__info{
+                padding-left: 10px;
+                h3{
+                    margin-bottom: 25px;
+                }
+            }
+            img{
+                width: 100%;
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    .jobtype{
+        padding-bottom: 120px;
+        h3{
+            margin-bottom: 30px;
+        }
+        img{
+            display: none;
+        }
+        &__item-wrap{
+            position: unset;
+        }
+        .container{
+            display: block;
+            .jobtype__item{
+                width: 100%;
+                margin-bottom: 30px;
+                border-bottom: 5px solid $primary-cl;
+                p{
+                    max-width: unset;
+                }
+            }
+        }
+        .pagination{
+            bottom: -20px;
+        }
+    }
+}

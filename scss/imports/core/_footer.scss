@@ -1,0 +1,34 @@
+.footer{
+	background: black;
+	text-align: center;
+	padding-bottom: 25px;
+	h2{
+		padding: 50px 0;
+		@include text(20px, avb, normal, white, uppercase);
+		font-weight: bold;
+	}
+	.social{
+		padding-bottom: 50px;
+	}
+	&__menu{
+		padding-bottom: 45px;
+		ul{
+			@include midflex();
+			li{
+				padding: 0 15px;
+				border-right: 1px solid white;
+				&:last-child{
+					border-right: none;
+				}
+				a{
+					text-decoration: none;
+					@include text(12px, sfe, normal, white, uppercase)
+				}
+			}
+		}
+	}
+	span{
+		@include text(12px, sfe, normal, white, uppercase);
+		margin-top: 15px;
+	}
+}

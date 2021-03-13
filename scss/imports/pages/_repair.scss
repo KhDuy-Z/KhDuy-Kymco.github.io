@@ -1,0 +1,16 @@
+.article{
+    &__content{
+        padding: 20px 90px;
+        table, tr, td{
+            border: 1px solid black;
+            margin-bottom: 20px;
+            tr{
+                td{
+                    padding: 10px;
+                    @include text(16px, sfe, normal, black, inherit);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
